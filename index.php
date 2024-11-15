@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+
+    $today = date("d/m/y H:i:s"); //date courante ou on fait le rendu de cette page
+    $title = 'Chocolatte ('.$today.')'; //concaténer, faire référence à
+
+?><!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -7,7 +12,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Barista Cafe HTML CSS Template</title>
+        <title><?php echo $title; ?></title> <!-- <?php /**/?> pour creér un balise php, quand quelque chose commence par $ c'est une variable-->
+        <title><?= $title; ?></title> <!--même chose que la ligne du dessus mais seulement depuis PHP 7, Lorsque on est dans du templateting on fait ce echo. Et quand on est en script alors celui du dessus-->
 
         <!-- CSS FILES -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
