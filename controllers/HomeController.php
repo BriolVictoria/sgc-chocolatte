@@ -20,6 +20,7 @@ class HomeController extends BaseController // extends => on va aller chercher t
             'pre' => 'Bienvenue chez',
             'title' => 'Chocolatte', // -> accesseur, => asignation de tableaux
             'employees' => Employee::getHomepageEmployees(),
+            'reviews' => Review::getHomepageReviews(),
         ]);
     }
 

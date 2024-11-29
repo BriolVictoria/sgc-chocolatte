@@ -9,6 +9,7 @@ require_once('controllers/BaseController.php'); //d'abbord charger base et puis 
 require_once('controllers/HomeController.php');
 require_once('models/BaseModel.php');
 require_once('models/Employee.php');
+require_once('models/Review.php');
 
 $controller = new HomeController(); // on crée un nouvelle objet qui s'appelle homecontroller, dans le sens programmation orienté objet, on veut un controller pour la page home qu'on va appeller homecontrolller et on va mettre une instante
 

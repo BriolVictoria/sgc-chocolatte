@@ -175,7 +175,7 @@ Bootstrap 5 HTML CSS Template
                                     </div>
 
                                     <div class="team-block-image-wrap">
-                                        <img src="<?= $employee->img; ?>" class="team-block-image img-fluid" alt="">
+                                        <img src="<?= $employee->img; ?>" class="team-block-image img-fluid" alt="Image de <?= $employee->name; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -373,23 +373,26 @@ Bootstrap 5 HTML CSS Template
                             </div>
 
                             <div class="timeline">
-                                <div class="timeline-container timeline-container-left">
+                                <?php foreach($reviews as $index => $review): ?>
+                                <div class="<?php if(timeline-container timeline-container-left): ?> <?php endif ?>">
                                     <div class="timeline-content">
                                         <div class="reviews-block">
                                             <div class="reviews-block-image-wrap d-flex align-items-center">
-                                                <img src="images/reviews/young-woman-with-round-glasses-yellow-sweater.jpg" class="reviews-block-image img-fluid" alt="">
+                                                <img src="<?= $review->avatar_img;?>" class="reviews-block-image img-fluid" alt="">
+
 
                                                 <div class="">
-                                                    <h6 class="text-white mb-0">Sandra</h6>
+                                                    <h6 class="text-white mb-0"><?= $review->customer; ?></h6>
                                                     <em class="text-white"> Customers</em>
                                                 </div>
+
                                             </div>
 
                                             <div class="reviews-block-info">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <p><?= $review->content; ?></p>
 
                                                 <div class="d-flex border-top pt-3 mt-4">
-                                                    <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>
+                                                    <strong class="text-white"><?= $review->rating; ?><small class="ms-2">Rating</small></strong>
 
                                                     <div class="reviews-group ms-auto">
                                                         <i class="bi-star-fill"></i>
@@ -403,8 +406,9 @@ Bootstrap 5 HTML CSS Template
                                         </div>
                                     </div>
                                 </div>
+                                <?php endforeach; ?>
 
-                                <div class="timeline-container timeline-container-right">
+                               <!-- <div class="timeline-container timeline-container-right">
                                     <div class="timeline-content">
                                         <div class="reviews-block">
                                             <div class="reviews-block-image-wrap d-flex align-items-center">
@@ -464,9 +468,8 @@ Bootstrap 5 HTML CSS Template
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
-
                         </div>
                     </div>
                 </section>
@@ -617,3 +620,8 @@ Bootstrap 5 HTML CSS Template
 
     </body>
 </html>
+
+<?php if(true): ?> <?php endif ?>
+
+"timeline-container <?= ($index % 2 == 0) ? 'timeline-container-left' : 'timeline-container-right'; ?>"
+<?php if(timeline-container timeline-container-left): ?> <?php endif ?>

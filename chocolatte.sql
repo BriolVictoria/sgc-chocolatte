@@ -157,13 +157,20 @@ values (1, 'latte', 'du café avec du lait', 'none', 12, 7,sysdate(), sysdate(),
        (2, 'pancakes', 'mini crepes', 'populaire', 12, 1,sysdate(), sysdate(), sysdate()),
        (3, 'toasted waffle', 'Brewed coffee and steamed milk', 'normal', 16, 12,sysdate(), sysdate(), sysdate());
 
+delete from reviews;
+
 insert into reviews (customer, cover_img, avatar_img, content, rating, verified, created_at, updated_at, deleted_at)
-values ('Sandra', 'sandra.png', 'avatar.sandra.png', 'Les prix ne sont pas trop cher et les produits sont bons', 4, 4, sysdate(), sysdate(), sysdate()),
-       ('Don', 'don.png', 'avatar.don.png', 'très bon, je ne suis pas déçu', 4, 4, sysdate(), sysdate(), sysdate()),
-       ('Olivia', 'olivia.png', 'avatar.olivia.png', 'Les prix ne sont pas trop cher et les produits sont assez bons', 4, 4, sysdate(), sysdate(), sysdate());
+values ('Amelie', 'images/reviews/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg', 'images/reviews/young-woman-with-round-glasses-yellow-sweater.jpg', 'Les prix ne sont pas trop cher et les produits sont bons', 4, 4, sysdate(), sysdate(), sysdate()),
+       ('Eline', 'images/reviews/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg', 'images/reviews/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg', 'très bon, je ne suis pas déçu', 4, 4, sysdate(), sysdate(), sysdate()),
+       ('Tom', 'images/reviews/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg', 'images/reviews/senior-man-white-sweater-eyeglasses.jpg', 'Les prix ne sont pas trop cher et les produits sont assez bons', 4, 4, sysdate(), sysdate(), sysdate());
 
 
 SELECT `name`, `job`, `description`, `img`
 FROM `employees`
 ORDER BY `name` ASC
 LIMIT 4;
+
+SELECT `customer`,`cover_img`,`avatar_img`, `content`, `rating`, `verified`
+FROM `reviews`
+ORDER BY `customer` ASC
+LIMIT 3;
